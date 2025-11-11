@@ -1,0 +1,1 @@
+Ghi bằng mode 'w' - ghi mới / ghi đè.
