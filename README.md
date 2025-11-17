@@ -13,4 +13,4 @@ Giúp học sinh:
 
 1. **Clone repo:**
    ```bash
-   git clone https://github.com/<username>/python-classroom-code.git
+   https://github.com/TanTruong24/python-classroom-materials
