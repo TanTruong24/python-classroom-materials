@@ -36,10 +36,10 @@ elif 67.5 < runway_deg < 112.5:
 elif 112.5 < runway_deg < 157.5:
     direction = "southeast"
 
-elif 157.5 < runway_deg < 205.5:
+elif 157.5 < runway_deg < 202.5:
     direction = "south"
 
-elif 205.5 < runway_deg < 247.5:
+elif 202.5 < runway_deg < 247.5:
     direction = "southwest"
 
 elif 247.5 < runway_deg < 292.5:
@@ -48,4 +48,38 @@ elif 247.5 < runway_deg < 292.5:
 elif 292.5 < runway_deg < 337.5:
     direction = "northwest"
 
-print(f"{runway_deg} degrees {direction}")
+print(f"{runway_deg} degrees ({direction})")
+
+
+## refactor:runway_num = int(input())
+
+# Bước 1: đổi thành độ
+deg = (runway_deg) % 360  # phòng khi nhập > 36
+
+# Bước 2: danh sách 8 hướng theo thứ tự góc:
+# 0°   -> north
+# 45°  -> northeast
+# 90°  -> east
+# 135° -> southeast
+# 180° -> south
+# 225° -> southwest
+# 270° -> west
+# 315° -> northwest
+directions = [
+    "north",
+    "northeast",
+    "east",
+    "southeast",
+    "south",
+    "southwest",
+    "west",
+    "northwest",
+]
+
+# Bước 3: tính index hướng gần nhất
+# Ví dụ: deg = 30
+# 30 / 45 = 0.666..., round -> 1 -> directions[1] = "northeast"
+direction_index = round(deg / 45) % 8
+direction = directions[direction_index]
+
+print(f"{deg} degrees ({direction})")
